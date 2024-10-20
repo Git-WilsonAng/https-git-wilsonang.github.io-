@@ -7,6 +7,15 @@ hamburger.addEventListener("click", function () {
   navMenu.classList.toggle("hidden");
 });
 
+// Close the menu when a menu item is clicked
+const menuItems = document.querySelectorAll("#navMenu a");
+menuItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    navMenu.classList.add("hidden"); // Hide menu
+    hamburger.classList.toggle("hamburger-active");
+  });
+});
+
 // Show or hide the button based on scroll position
 window.addEventListener("scroll", function () {
   const backToTopButton = document.getElementById("backToTop");
